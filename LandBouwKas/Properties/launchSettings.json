@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LandBouwKas (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "LandBouwKas (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
