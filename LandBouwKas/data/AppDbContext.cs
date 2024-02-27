@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 
-namespace LandBouwKas.data
+namespace LandBouwKas.Data
 {
     internal class AppDbContext : DbContext
 

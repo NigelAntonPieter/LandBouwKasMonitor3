@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.Model
 {
-    internal class Zone
+    internal class Voedingstoffen
     {
-         public int Id { get; set; }
+        public int Id {  get; set; }
         public string Name { get; set; }
+        public int Microgram { get; set; }
     }
 }
