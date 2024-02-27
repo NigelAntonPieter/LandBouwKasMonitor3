@@ -8,5 +8,8 @@ namespace LandBouwKas.Model
 {
     internal class GewassenVoedingstoffen
     {
+        public int Id { get; set; }
+        public Gewassen Gewassen { get; set; }
+        public Voedingstoffen Voedingstoffen { get; set; }
     }
 }

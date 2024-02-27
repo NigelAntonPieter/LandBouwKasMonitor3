@@ -8,5 +8,8 @@ namespace LandBouwKas.Model
 {
     internal class Voedingstoffen
     {
+        public int Id {  get; set; }
+        public string Name { get; set; }
+        public int Microgram { get; set; }
     }
 }
