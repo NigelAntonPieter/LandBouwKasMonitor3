@@ -13,14 +13,10 @@ namespace LandBouwKas.data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging();
             optionsBuilder.UseMySql(
-                "server=localhost;" +
-                "port=3306;" +
-                "user=root;" +
-                "password=root;" +
-                "database=LandBouwKas",
-                ServerVersion.Parse("8.0.30-mariadb")
-                );
+               ConfigurationManager.ConnectionStrings["LandbouwKasMonitor"].ConnectionString,
+               ServerVersion.Parse("5.7.33-winx64"));
         }
     }
 }
