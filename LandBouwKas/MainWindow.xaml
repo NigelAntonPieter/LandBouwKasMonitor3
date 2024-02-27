@@ -11,10 +11,11 @@
     <Grid>
         <Grid Background="Blue"
               BorderBrush="Black"
-              BorderThickness="1" 
-              Width="700"
-              Height="400"
-              CornerRadius="15">
+              BorderThickness="1"
+              Width="800"
+              Height="5"
+              CornerRadius="15"
+              Padding="100">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -24,12 +25,73 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-        </Grid>
 
-        <Button Grid.Column="0"
-                Grid.Row="0"
-                >
-            
-        </Button>
+            <Button Grid.Column="0"
+                    Grid.Row="0"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    x:Name="Zone1"
+                    Click="Zone_Click"
+                    Width="250"
+                    Height="75"
+                    Background="White">
+                Zone 1
+            </Button>
+            <Button Grid.Column="0"
+                    Grid.Row="1"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    x:Name="zone2"
+                    Click="Zone_Click"
+                    Width="250"
+                    Height="75"
+                    Background="White">
+                Zone 2
+            </Button>
+            <Button Grid.Column="0"
+                    Grid.Row="2"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    x:Name="zone3"
+                    Click="Zone_Click"
+                    Width="250"
+                    Height="75"
+                    Background="White">
+                Zone 3
+            </Button>
+            <Button Grid.Column="1"
+                    Grid.Row="0"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    x:Name="zone4"
+                    Click="Zone_Click"
+                    Width="250"
+                    Height="75"
+                    Background="White">
+                Zone 4
+            </Button>
+            <Button Grid.Column="1"
+                    Grid.Row="1"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    x:Name="zone5"
+                    Click="Zone_Click"
+                    Width="250"
+                    Height="75"
+                    Background="White">
+                Zone 5
+            </Button>
+            <Button Grid.Column="1"
+                    Grid.Row="2"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    x:Name="zone6"
+                    Click="Zone_Click"
+                    Width="250"
+                    Height="75"
+                    Background="White">
+                Zone 6
+            </Button>
+        </Grid>
     </Grid>
 </Window>
