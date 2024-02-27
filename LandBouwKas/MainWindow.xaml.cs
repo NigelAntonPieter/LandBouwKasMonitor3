@@ -34,6 +34,34 @@ namespace LandBouwKas
             }
         }
 
-     
+        private void zone1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zone2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zone3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zone4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zone5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zone6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
