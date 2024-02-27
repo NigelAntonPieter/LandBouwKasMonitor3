@@ -25,7 +25,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Button 
+                <!--<Button 
                         Grid.Row="0"
                         BorderThickness="1"
                         BorderBrush="Black"
@@ -46,7 +46,7 @@
                         Height="75"
                         Background="White">
                     Zone 2
-                </Button>
+                </Button>-->
             </Grid>
         </Grid>
     </Grid>
