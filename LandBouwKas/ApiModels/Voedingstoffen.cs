@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Voedingstoffen
+    public class Voedingstoffen
     {
         public int stikstof {  get; set; }
         public int fosfor {  get; set; }

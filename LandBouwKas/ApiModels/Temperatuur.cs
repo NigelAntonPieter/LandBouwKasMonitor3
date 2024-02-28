@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Temperatuur
+    public class Temperatuur
     {
         public int waarde {  get; set; }
         public string eenheid { get; set; }

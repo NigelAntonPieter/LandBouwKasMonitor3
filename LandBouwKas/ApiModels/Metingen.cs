@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Metingen
+    public class Metingen
     {
         public DateTime meetdatum {  get; set; }
         public List<Zone> zones { get; set; }

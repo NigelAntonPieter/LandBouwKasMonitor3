@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Zone
+    public class Zone
     {
         public int id { get; set; }
         public string zoneNaam { get; set; }

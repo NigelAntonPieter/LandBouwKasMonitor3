@@ -34,15 +34,13 @@ namespace LandBouwKas
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        private const string ApiBaseUrl = "https://api.jsonbin.io/v3/b/65c3a601266cfc3fde871b78"; // API base URL
+        private const string ApiBaseUrl = "https://api.jsonbin.io/v3/b/65c3a601266cfc3fde871b78"; 
         private HttpClient _httpClient;
         public MainWindow()
         {
             this.InitializeComponent();
             _httpClient = new HttpClient();
-            //LoadDataAsync();
-
-
+           
             using (var db = new AppDbContext())
             {
                 _httpClient = new HttpClient();

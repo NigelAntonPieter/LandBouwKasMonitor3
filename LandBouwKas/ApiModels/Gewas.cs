@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Gewas
+    public class Gewas
     {
         public int gewasId { get; set; }
         public string gewasNaam { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Record
+    public class Record
     {
         public List<Metingen> metingen { get; set; }
     }

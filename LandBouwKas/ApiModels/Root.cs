@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Root
+    public class Root
     {
         public Record record { get; set; }
     }
