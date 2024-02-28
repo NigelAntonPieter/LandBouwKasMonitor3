@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Zonlicht
+    public class Zonlicht
     {
         public int intensiteit {  get; set; }
         public int urenPerDag { get; set; }

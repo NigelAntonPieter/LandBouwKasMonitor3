@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.ApiModels
 {
-    internal class Bodemgezondheid
+    public class Bodemgezondheid
     {
         public double ph { get; set; }
         public Voedingstoffen voedingsftoffen {  get; set; }
