@@ -40,7 +40,7 @@ namespace LandBouwKas
         {
             this.InitializeComponent();
             _httpClient = new HttpClient();
-            LoadDataAsync();
+            //LoadDataAsync();
 
 
             using (var db = new AppDbContext())
@@ -51,76 +51,9 @@ namespace LandBouwKas
             }
         }
 
-        private async Task<List<Gewassen>> GetGewassenForZoneAsync(string zoneName)
+        private void Zone_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                // Construct the API endpoint URL
-                string apiUrl = $"{ApiBaseUrl}/gewassen?zone={Uri.EscapeDataString(zoneName)}";
 
-                // Call the API and get the response
-                HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
-                response.EnsureSuccessStatusCode();
-
-                // Read the response content as string
-                string responseBody = await response.Content.ReadAsStringAsync();
-
-                // Deserialize the JSON response to a list of Gewas objects
-                List<Gewassen> gewassen = JsonConvert.DeserializeObject<List<Gewassen>>(responseBody);
-
-                return gewassen;
-            }
-            catch (Exception ex)
-            {
-                // Handle any exceptions, such as network errors or deserialization errors
-                Console.WriteLine($"Error getting gewassen: {ex.Message}");
-                return new List<Gewassen>(); // Return an empty list in case of error
-            }
-        }
-
-        private async void Zone_Click(object sender, RoutedEventArgs e)
-        {
-            Button btn = sender as Button;
-            string zoneName = btn.Content.ToString();
-
-            
-            List<Gewassen> gewassen = await GetGewassenForZoneAsync(zoneName);
-
-            GewasWindow gewasWindow = new GewasWindow(gewassen);
-            gewasWindow.Activate();
-        }
-
-        private async void LoadDataAsync()
-        {
-            try
-            {
-                var jsonString = await GetZones();
-                var zones = JsonSerializer.Deserialize<List<Zone>>(jsonString, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                if (zones != null && zones.Any())
-                {
-                    var firstZoneName = zones.First().gewassen[0].gewasNaam;
-                    // Do something with firstZoneName, or iterate through zones to access other data
-                }
-                else
-                {
-                    // Handle empty or null response
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions
-            }
-        }
-
-        private async Task<string> GetZones()
-        {
-            var response = await _httpClient.GetAsync($"{ApiBaseUrl}");
-            response.EnsureSuccessStatusCode();
-            return await response.Content.ReadAsStringAsync();
         }
     }
 }
