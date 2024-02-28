@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.Model
 {
-    internal class Gewassen
+    public class Gewassen
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+       
         public Zone Zone { get; set; }
     }
 }
