@@ -5,10 +5,60 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LandBouwKas"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:apimodels="using:LandBouwKas.ApiModels"
     mc:Ignorable="d">
 
     <Grid>
 
+
+        <Grid Background="Blue"
+      BorderBrush="Black"
+      BorderThickness="1"
+      Width="800"
+      Height="500"
+      CornerRadius="15"
+      Padding="100"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center">
+
+            <ListView x:Name="GegevensGewasListView"
+                      ItemClick="GegevensGewasListView_ItemClick"
+                      IsItemClickEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="apimodels:Gewas">
+                        <StackPanel>
+                            <TextBlock>
+                                <Run Text="Temperatuur: "/>
+                                <Run Text="{x:Bind temperatuur.waarde}"/>
+                                <Run Text="{x:Bind temperatuur.eenheid}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Vochtigheid: "/>
+                                <Run Text="{x:Bind vochtigheid.waarde}"/>
+                                <Run Text="{x:Bind vochtigheid.eenheid}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Bodemgezondheid: "/>
+                                <Run Text="ph: "/>
+                                <Run Text="{x:Bind bodemgezondheid.ph}"/>
+                                <Run Text="voedingstoffen: "/>
+                                <Run Text="{x:Bind bodemgezondheid.voedingsftoffen}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Zonlicht: "/>
+                                <Run Text="{x:Bind zonlicht.intensiteit}"/>
+                                <Run Text="{x:Bind zonlicht.urenPerDag}"/>
+                            </TextBlock>
+                            <!--<TextBlock Text="{x:Bind temperatuur}"/>
+                            <TextBlock Text="{x:Bind vochtigheid}"/>
+                            <TextBlock Text="{x:Bind bodemgezondheid}"/>
+                            <TextBlock Text="{x:Bind zonlicht}"/>-->
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
     </Grid>
 </Window>

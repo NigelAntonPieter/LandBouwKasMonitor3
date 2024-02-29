@@ -12,7 +12,8 @@
 
     <Grid>
         <ListView x:Name="GewasListView"
-                  ItemClick="GewasListView_ItemClick">
+                  ItemClick="GewasListView_ItemClick"
+                  IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="apimodels:Gewas">
                     <StackPanel>

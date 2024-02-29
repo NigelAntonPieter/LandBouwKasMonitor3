@@ -34,7 +34,9 @@ namespace LandBouwKas
         private void GewasListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             Gewas gewas = e.ClickedItem as Gewas;
-            
+
+            var gegevensGewasWindow = new GegevensGewasWindow(gewas);
+            gegevensGewasWindow.Activate();
         }
     }
 }
