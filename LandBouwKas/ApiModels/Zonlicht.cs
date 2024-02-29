@@ -8,7 +8,7 @@ namespace LandBouwKas.ApiModels
 {
     public class Zonlicht
     {
-        public int intensiteit {  get; set; }
+        public string intensiteit {  get; set; }
         public int urenPerDag { get; set; }
     }
 }

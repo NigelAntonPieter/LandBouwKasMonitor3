@@ -9,5 +9,6 @@ namespace LandBouwKas.ApiModels
     public class Root
     {
         public Record record { get; set; }
+        public List<Gewas> gewassen { get; set; }
     }
 }

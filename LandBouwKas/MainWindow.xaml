@@ -35,7 +35,8 @@
                 Click="Zone_Click"
                 Width="250"
                 Height="75"
-                Background="White">
+                Background="Black"
+                Tag="1">
             Zone 1
         </Button>
         <Button Grid.Column="0"
@@ -46,7 +47,8 @@
                 Click="Zone_Click"
                 Width="250"
                 Height="75"
-                Background="White">
+                Background="Black"
+                Tag="2">
             Zone 2
         </Button>
         <Button Grid.Column="0"
@@ -57,7 +59,8 @@
                 Click="Zone_Click"
                 Width="250"
                 Height="75"
-                Background="White">
+                Background="Black"
+                Tag="3">
             Zone 3
         </Button>
         <Button Grid.Column="1"
@@ -68,7 +71,8 @@
                 Click="Zone_Click"
                 Width="250"
                 Height="75"
-                Background="White">
+                Background="Black"
+                Tag="4">
             Zone 4
         </Button>
         <Button Grid.Column="1"
@@ -79,7 +83,8 @@
                 Click="Zone_Click"
                 Width="250"
                 Height="75"
-                Background="White">
+                Background="Black"
+                Tag="5">
             Zone 5
         </Button>
         <Button Grid.Column="1"
@@ -90,8 +95,16 @@
                 Click="Zone_Click"
                 Width="250"
                 Height="75"
-                Background="White">
+                Background="Black"
+                Tag="6">
             Zone 6
         </Button>
+        <ContentDialog x:Name="gewasDialog"
+                       Title="Geen Gewassen"
+                       CloseButtonText="OK">
+            <StackPanel>
+                <TextBlock Text="Er zit hier geen gewas ." />
+            </StackPanel>
+        </ContentDialog>
     </Grid>
 </Window>

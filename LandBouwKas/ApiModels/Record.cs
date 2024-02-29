@@ -9,5 +9,6 @@ namespace LandBouwKas.ApiModels
     public class Record
     {
         public List<Metingen> metingen { get; set; }
+
     }
 }

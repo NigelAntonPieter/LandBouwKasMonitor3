@@ -13,6 +13,7 @@ namespace LandBouwKas.Data
     internal class AppDbContext : DbContext
     {
         public DbSet<CashData> CashData { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
