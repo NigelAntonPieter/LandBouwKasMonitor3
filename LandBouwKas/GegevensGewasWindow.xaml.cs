@@ -27,7 +27,13 @@ namespace LandBouwKas
         public GegevensGewasWindow(Gewas gewas)
         {
             this.InitializeComponent();
+            LoadGewasGegevens(gewas);
+        }
+
+        public void LoadGewasGegevens(Gewas gewas)
+        {
             GegevensGewasListView.ItemsSource = new List<Gewas> { gewas };
+
         }
 
         private void GegevensGewasListView_ItemClick(object sender, ItemClickEventArgs e)

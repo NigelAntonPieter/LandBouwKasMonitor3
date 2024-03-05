@@ -17,48 +17,76 @@
       Width="800"
       Height="500"
       CornerRadius="15"
-      Padding="100"
       HorizontalAlignment="Center"
       VerticalAlignment="Center">
 
-            <ListView x:Name="GegevensGewasListView"
-                      ItemClick="GegevensGewasListView_ItemClick"
-                      IsItemClickEnabled="True">
+            <ListView x:Name="GegevensGewasListView">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid Padding="12" Background="{ThemeResource SystemBaseLowColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="340"/>
+                                <ColumnDefinition Width="340"/>
+                                <ColumnDefinition Width="340"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Informatie" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Text="Waarde" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            <TextBlock Grid.Column="2" Text="Eenheid" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="apimodels:Gewas">
-                        <StackPanel>
-                            <TextBlock>
-                                <Run Text="Temperatuur: "/>
-                                <Run Text="{x:Bind temperatuur.waarde}"/>
-                                <Run Text="{x:Bind temperatuur.eenheid}"/>
-                            </TextBlock>
-                            <TextBlock>
-                                <Run Text="Vochtigheid: "/>
-                                <Run Text="{x:Bind vochtigheid.waarde}"/>
-                                <Run Text="{x:Bind vochtigheid.eenheid}"/>
-                            </TextBlock>
-                            <TextBlock>
-                                <Run Text="Bodemgezondheid: "/>
-                                <Run Text="ph: "/>
-                                <Run Text="{x:Bind bodemgezondheid.ph}"/>
-                                <Run Text="voedingstoffen: "/>
-                                <Run Text="{x:Bind bodemgezondheid.voedingsftoffen}"/>
-                            </TextBlock>
-                            <TextBlock>
-                                <Run Text="Zonlicht: "/>
-                                <Run Text="{x:Bind zonlicht.intensiteit}"/>
-                                <Run Text="{x:Bind zonlicht.urenPerDag}"/>
-                            </TextBlock>
-                            <!--<TextBlock Text="{x:Bind temperatuur}"/>
-                            <TextBlock Text="{x:Bind vochtigheid}"/>
-                            <TextBlock Text="{x:Bind bodemgezondheid}"/>
-                            <TextBlock Text="{x:Bind zonlicht}"/>-->
-                        </StackPanel>
+                    <DataTemplate x:Name="TableDataTemplate" x:DataType="apimodels:Gewas">
+                        <Grid Height="200" AutomationProperties.Name="Test">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="310"/>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="310"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Ellipse Height="32" Width="32" VerticalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="Placeholder.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Temperatuur" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Vochtigheid" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Bodemgezondheid" />
+                            <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Fosfor" />
+                            <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Kalium" />
+                            <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Stikstof" />
+                            <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Zonlicht" />
+
+                            <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.waarde}" />
+                            <TextBlock Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.waarde}" />
+                            <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.ph}" />
+                            <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Text="{x:Bind zonlicht.intensiteit}" />
+                            <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsftoffen.fosfor}" />
+                            <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsftoffen.kalium}" />
+                            <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsftoffen.stikstof}" />
+
+                            <TextBlock Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.eenheid}" />
+                            <TextBlock Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.eenheid}" />
+                            <TextBlock Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" Text="ph" />
+                            <TextBlock Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Text="" />
+                            <TextBlock Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" Text="mg" />
+                            <TextBlock Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" Text="mg" />
+                            <TextBlock Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" Text="μg m-3" />
+                            
+                        </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-
         </Grid>
     </Grid>
 </Window>
