@@ -35,14 +35,17 @@ namespace LandBouwKas
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        //Dit is een Basis-URL voor de API Die we hebben gekregen--> Nigel Pieter
         private const string ApiBaseUrl = "https://api.jsonbin.io/v3/b/65c3a601266cfc3fde871b78";
         private HttpClient _httpClient;
         private AppDbContext db;
+
         public MainWindow()
         {
             this.InitializeComponent();
             _httpClient = new HttpClient();
 
+            //Dit zorgt voor de dat de bestaande database wordt verwijderd en weer opnieuw wordt aangemaakt--> Nigel Pieter
             using (db = new AppDbContext())
             {
                 db.Database.EnsureDeleted();
@@ -51,6 +54,7 @@ namespace LandBouwKas
             }
         }
 
+        //Haalt data op van de API en zet ze weer neer in de database--> Nigel Pieter
         public void Fetchdata()
         {
             String data = _httpClient.GetStringAsync("https://api.jsonbin.io/v3/b/65c3a601266cfc3fde871b78/").Result;
@@ -73,6 +77,7 @@ namespace LandBouwKas
 
                 if (int.TryParse(zoneId, out int id))
                 {
+                    // Wijs geselecteerde zone toe op basis van de geklikte knop--> Nigel Pieter
                     switch (id)
                     {
                         case 1:
@@ -98,13 +103,13 @@ namespace LandBouwKas
                     }
                     if (selectedZone != null)
                     {
-                        // Deserialize JSON-data
+                    
                         CashData cashData = new CashData();
                         cashData.FetchDate = DateTime.Now;
                         cashData.Date = DateTime.Now;
                         cashData.JSONDATA = _httpClient.GetStringAsync(ApiBaseUrl).Result;
 
-                        // Get gewassen list by looping through records
+                    
                         Root root = cashData.ToRoot();
                         List<Gewas> gewassen = null;
                         if (root != null && root.record != null && root.record.metingen != null)
@@ -113,18 +118,18 @@ namespace LandBouwKas
                             {
                                 foreach (var zone in meting.zones)
                                 {
-                                    // Check if the zone id matches the selected zone id
+                                    
                                     if (zone.id == selectedZone.id)
                                     {
                                         gewassen = zone.gewassen;
-                                        break; // Exit the loop if the zone is found
+                                        break; 
                                     }
                                 }
                                 if (gewassen != null)
-                                    break; // Exit the outer loop if gewassen is found
+                                    break; 
                             }
                         }
-
+                        // Als gewassen worden gevonden, toon ze in een venster, anders toon een foutmeldingsvenster--> Nigel Pieter
                         if (gewassen != null)
                         {
                             selectedZone.gewassen = gewassen;
