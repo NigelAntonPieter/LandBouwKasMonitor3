@@ -133,7 +133,7 @@ namespace LandBouwKas
                         if (gewassen != null)
                         {
                             selectedZone.gewassen = gewassen;
-                            GewasWindow gewasWindow = new GewasWindow(selectedZone.gewassen);
+                            GewasWindow gewasWindow = new GewasWindow(selectedZone);
                             gewasWindow.Activate();
                         }
                         else
