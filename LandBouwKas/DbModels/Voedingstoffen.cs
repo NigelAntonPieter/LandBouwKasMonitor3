@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LandBouwKas.Model
 {
-    internal class Voedingstoffen
+    internal class Voedingsstoffen
     {
         public int Id {  get; set; }
         public string Name { get; set; }

@@ -10,6 +10,6 @@ namespace LandBouwKas.Model
     {
         public int Id { get; set; }
         public Gewassen Gewassen { get; set; }
-        public Voedingstoffen Voedingstoffen { get; set; }
+        public Voedingsstoffen voedingsstoffen { get; set; }
     }
 }

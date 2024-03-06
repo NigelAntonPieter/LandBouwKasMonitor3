@@ -9,6 +9,6 @@ namespace LandBouwKas.ApiModels
     public class Bodemgezondheid
     {
         public double ph { get; set; }
-        public Voedingstoffen voedingsftoffen {  get; set; }
+        public Voedingsstoffen voedingsstoffen {  get; set; }
     }
 }

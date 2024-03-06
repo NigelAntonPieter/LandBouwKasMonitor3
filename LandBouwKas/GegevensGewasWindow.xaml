@@ -71,9 +71,9 @@
                             <TextBlock Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.waarde}" />
                             <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.ph}" />
                             <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Text="{x:Bind zonlicht.intensiteit}" />
-                            <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsftoffen.fosfor}" />
-                            <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsftoffen.kalium}" />
-                            <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsftoffen.stikstof}" />
+                            <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.fosfor}" />
+                            <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.kalium}" />
+                            <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.stikstof}" />
 
                             <TextBlock Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.eenheid}" />
                             <TextBlock Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.eenheid}" />
