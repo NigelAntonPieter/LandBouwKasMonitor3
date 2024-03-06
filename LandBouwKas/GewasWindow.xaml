@@ -15,10 +15,12 @@
           BorderThickness="1"
           Width="800"
           Height="400"
-          CornerRadius="100">
+          CornerRadius="100"
+          >
         <ListView x:Name="GewasListView"
                   ItemClick="GewasListView_ItemClick"
-                  IsItemClickEnabled="True">
+                  IsItemClickEnabled="True" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="apimodels:Gewas">
                     <StackPanel 
