@@ -20,7 +20,9 @@
       HorizontalAlignment="Center"
       VerticalAlignment="Center">
 
-            <ListView x:Name="GegevensGewasListView">
+            <ListView x:Name="GegevensGewasListView"
+                      IsItemClickEnabled="True"
+                      ItemClick="GegevensGewasListView_ItemClick">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid Padding="12" Background="{ThemeResource SystemBaseLowColor}">
@@ -67,13 +69,13 @@
                             <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Kalium" />
                             <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Stikstof" />
 
-                            <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.waarde}" />
-                            <TextBlock Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.waarde}" />
-                            <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.ph}" />
-                            <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Text="{x:Bind zonlicht.intensiteit}" />
-                            <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.fosfor}" />
-                            <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.kalium}" />
-                            <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.stikstof}" />
+                            <TextBlock Grid.Column="2" Grid.Row="1" x:Name="temperatuurTb" VerticalAlignment="Center" Text="{x:Bind temperatuur.waarde}" />
+                            <TextBlock Grid.Column="2" Grid.Row="2" x:Name="vochtigheid" VerticalAlignment="Center" Text="{x:Bind vochtigheid.waarde}" />
+                            <TextBlock Grid.Column="2" Grid.Row="3" x:Name="bodemgezondheid" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.ph}" />
+                            <TextBlock Grid.Column="2" Grid.Row="4" x:Name="zonlicht" VerticalAlignment="Center" Text="{x:Bind zonlicht.intensiteit}" />
+                            <TextBlock Grid.Column="2" Grid.Row="5" x:Name="bodemgezondheidfos" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.fosfor}" />
+                            <TextBlock Grid.Column="2" Grid.Row="6" x:Name="bodemgezondheidkal" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.kalium}" />
+                            <TextBlock Grid.Column="2" Grid.Row="7" x:Name="bodemgezondheidsti" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.stikstof}" />
 
                             <TextBlock Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.eenheid}" />
                             <TextBlock Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.eenheid}" />
@@ -82,11 +84,15 @@
                             <TextBlock Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" Text="mg" />
                             <TextBlock Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" Text="mg" />
                             <TextBlock Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" Text="μg m-3" />
+
                             
+
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                
             </ListView>
+            
         </Grid>
     </Grid>
 </Window>

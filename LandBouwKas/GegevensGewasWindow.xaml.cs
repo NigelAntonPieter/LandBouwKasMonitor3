@@ -13,6 +13,10 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Aspose.Foundation;
+using Aspose.Pdf;
+
+
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -28,6 +32,8 @@ namespace LandBouwKas
         {
             this.InitializeComponent();
             LoadGewasGegevens(gewas);
+
+            
         }
 
         public void LoadGewasGegevens(Gewas gewas)
@@ -38,7 +44,35 @@ namespace LandBouwKas
 
         private void GegevensGewasListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            var selectedGewas = e.ClickedItem as Gewas;
+            var temp = selectedGewas.temperatuur.waarde;
+            var vocht = selectedGewas.vochtigheid.waarde;
+            var bodemgezondheid = selectedGewas.bodemgezondheid.ph;
+            var zonlicht = selectedGewas.zonlicht.intensiteit;
+            var bodemvoedingfos = selectedGewas.bodemgezondheid.voedingsstoffen.fosfor;
+            var bodemvoedingkal = selectedGewas.bodemgezondheid.voedingsstoffen.kalium;
+            var bodemvoedingsti = selectedGewas.bodemgezondheid.voedingsstoffen.stikstof;
 
+            /*The path to the documents directory.*/
+            string dataDir = "C:\\pdfkas\\offertekas.pdf";
+
+            // Initialize document object
+            Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+            // Add page
+            Aspose.Pdf.Page page = document.Pages.Add();
+            // Add text to new page
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment($"temperatuur: {temp}\temperatuur: {vocht}\bodemgezondheid: {bodemgezondheid}\bzonlicht: {zonlicht} \bfosfor: {bodemvoedingfos} \bkalium: {bodemvoedingkal} \bstikstof: {bodemvoedingsti} "));
+            // Save updated PDF
+            document.Save(dataDir + "offertekas.pdf");
         }
+
+        
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+       
     }
 }
