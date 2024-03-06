@@ -33,7 +33,6 @@ namespace LandBouwKas
         public void LoadGewasGegevens(Gewas gewas)
         {
             GegevensGewasListView.ItemsSource = new List<Gewas> { gewas };
-
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

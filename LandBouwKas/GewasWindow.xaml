@@ -10,7 +10,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid>
-        <Button Name="BackButton" Click="BackButton_Click" VerticalAlignment="Top" Background="Blue">
+        <Button Name="BackButton"
+                Click="BackButton_Click"
+                VerticalAlignment="Top"
+                Background="Blue">
             Terug Knop
         </Button>
         <Grid Background="Blue"
@@ -43,5 +46,4 @@
             </ListView>
         </Grid>
     </Grid>
-   
 </Window>
