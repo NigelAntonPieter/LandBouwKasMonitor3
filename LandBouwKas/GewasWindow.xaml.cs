@@ -25,10 +25,14 @@ namespace LandBouwKas
     /// </summary>
     public sealed partial class GewasWindow : Window
     {
-        public GewasWindow(List<Gewas> gewassen)
+
+        private Zone selectedZone;
+
+        public GewasWindow(Zone zone)
         {
             this.InitializeComponent();
-            GewasListView.ItemsSource = gewassen;
+            GewasListView.ItemsSource = zone.gewassen;
+            selectedZone = zone;
         }
 
         private void GewasListView_ItemClick(object sender, ItemClickEventArgs e)
