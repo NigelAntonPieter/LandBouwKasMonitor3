@@ -5,10 +5,88 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LandBouwKas"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:apimodels="using:LandBouwKas.ApiModels"
     mc:Ignorable="d">
 
     <Grid>
 
+
+        <Grid Background="Blue"
+      BorderBrush="Black"
+      BorderThickness="1"
+      Width="800"
+      Height="500"
+      CornerRadius="15"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center">
+
+            <ListView x:Name="GegevensGewasListView">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid Padding="12" Background="{ThemeResource SystemBaseLowColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="340"/>
+                                <ColumnDefinition Width="340"/>
+                                <ColumnDefinition Width="340"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Informatie" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Text="Waarde" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            <TextBlock Grid.Column="2" Text="Eenheid" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="TableDataTemplate" x:DataType="apimodels:Gewas">
+                        <Grid Height="200" AutomationProperties.Name="Test">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="310"/>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="310"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Ellipse Height="32" Width="32" VerticalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="Placeholder.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Temperatuur" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Vochtigheid" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Bodemgezondheid" />
+                            <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Zonlicht" />
+                            <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Fosfor" />
+                            <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Kalium" />
+                            <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="Stikstof" />
+
+                            <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.waarde}" />
+                            <TextBlock Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.waarde}" />
+                            <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.ph}" />
+                            <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Text="{x:Bind zonlicht.intensiteit}" />
+                            <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.fosfor}" />
+                            <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.kalium}" />
+                            <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Text="{x:Bind bodemgezondheid.voedingsstoffen.stikstof}" />
+
+                            <TextBlock Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Text="{x:Bind temperatuur.eenheid}" />
+                            <TextBlock Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Text="{x:Bind vochtigheid.eenheid}" />
+                            <TextBlock Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" Text="ph" />
+                            <TextBlock Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Text="" />
+                            <TextBlock Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" Text="mg" />
+                            <TextBlock Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" Text="mg" />
+                            <TextBlock Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" Text="μg m-3" />
+                            
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>

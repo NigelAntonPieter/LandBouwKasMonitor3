@@ -18,7 +18,8 @@ namespace LandBouwKas.Model
 
         public Root ToRoot ()
         {
-            Root parsed = JsonConvert.DeserializeObject<Root>(JSONDATA);
+            // noodzakelijk om de JSON-gegevens bruikbaar te maken
+            Root parsed = JsonConvert.DeserializeObject<Root>(JSONDATA); 
             return parsed;
         }
         

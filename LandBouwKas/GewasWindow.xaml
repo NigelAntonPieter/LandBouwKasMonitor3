@@ -18,9 +18,7 @@
           CornerRadius="100">
         <ListView x:Name="GewasListView"
                   ItemClick="GewasListView_ItemClick"
-                  HorizontalAlignment="Center" 
-                  VerticalAlignment="Center"    
-                  Padding="125">
+                  IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="apimodels:Gewas">
                     <StackPanel 
