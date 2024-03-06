@@ -36,9 +36,9 @@ namespace LandBouwKas
 
         }
 
-        private void GegevensGewasListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

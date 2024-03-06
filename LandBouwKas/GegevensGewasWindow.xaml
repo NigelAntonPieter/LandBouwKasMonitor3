@@ -9,8 +9,12 @@
     mc:Ignorable="d">
 
     <Grid>
-
-
+        <Button Name="BackButton"
+                Click="BackButton_Click"
+                VerticalAlignment="Top"
+                Background="Blue">
+            Terug Knop
+        </Button>
         <Grid Background="Blue"
       BorderBrush="Black"
       BorderThickness="1"

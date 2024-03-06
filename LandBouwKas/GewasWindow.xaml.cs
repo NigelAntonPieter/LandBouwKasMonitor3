@@ -42,5 +42,10 @@ namespace LandBouwKas
             var gegevensGewasWindow = new GegevensGewasWindow(gewas);
             gegevensGewasWindow.Activate();
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
