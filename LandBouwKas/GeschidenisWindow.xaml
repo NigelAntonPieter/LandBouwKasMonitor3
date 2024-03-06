@@ -6,29 +6,40 @@
     xmlns:local="using:LandBouwKas"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:LandBouwKas.ApiModels"
     mc:Ignorable="d">
 
     <Grid>
-        <Grid>
-            <Grid Background="Blue"
-          BorderBrush="Black"
-          BorderThickness="1"
-          Width="700"
-          Height="400"
-          CornerRadius="15">
-
-
-                <StackPanel>
-                    <Button Content="gewas 1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="10" Background="White" Foreground="Black"/>
-                    <Button Content="gewas 2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="10" Background="White" Foreground="Black"/>
-                </StackPanel>
-                
-
-            </Grid>
-        </Grid>
-
-
-
-
+        <ListBox x:Name="zoneListBox" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- Add more column definitions as needed -->
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding GewasNaam}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Temperatuur}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Vochtigheid}" />
+                        <TextBlock Grid.Column="3" Text="{Binding PH}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Stikstof}" />
+                        <TextBlock Grid.Column="5" Text="{Binding Fosfor}" />
+                        <TextBlock Grid.Column="6" Text="{Binding Kalium}" />
+                        <TextBlock Grid.Column="7" Text="{Binding ZonlichtIntensiteit}" />
+                        <TextBlock Grid.Column="8" Text="{Binding UrenPerDag}" />
+                      
+                        <!-- Add more TextBlocks for other properties -->
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
+
 </Window>

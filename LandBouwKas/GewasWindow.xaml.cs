@@ -26,7 +26,7 @@ namespace LandBouwKas
     public sealed partial class GewasWindow : Window
     {
 
-        private Zone selectedZone;
+        private Zone selectedZone = null;
 
         public GewasWindow(Zone zone)
         {
@@ -39,6 +39,12 @@ namespace LandBouwKas
         {
             Gewas gewas = e.ClickedItem as Gewas;
             
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GeschidenisWindow GeschidenisWindow = new GeschidenisWindow(selectedZone);
+            GeschidenisWindow.Activate();
         }
     }
 }

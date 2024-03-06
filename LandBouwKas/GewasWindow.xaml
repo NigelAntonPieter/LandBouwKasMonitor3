@@ -39,5 +39,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button 
+                    Content="geschidenis"
+                    
+                    Margin="5"
+                    Background="Blue" Click="Button_Click"/>
     </Grid>
 </Window>
