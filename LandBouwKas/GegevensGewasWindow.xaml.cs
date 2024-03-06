@@ -1,3 +1,4 @@
+using LandBouwKas.ApiModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -23,9 +24,21 @@ namespace LandBouwKas
     /// </summary>
     public sealed partial class GegevensGewasWindow : Window
     {
-        public GegevensGewasWindow()
+        public GegevensGewasWindow(Gewas gewas)
         {
             this.InitializeComponent();
+            LoadGewasGegevens(gewas);
+        }
+
+        public void LoadGewasGegevens(Gewas gewas)
+        {
+            GegevensGewasListView.ItemsSource = new List<Gewas> { gewas };
+
+        }
+
+        private void GegevensGewasListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }
