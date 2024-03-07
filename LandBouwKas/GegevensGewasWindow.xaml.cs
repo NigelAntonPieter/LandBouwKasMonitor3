@@ -71,7 +71,7 @@ namespace LandBouwKas
             // Add page
             Aspose.Pdf.Page page = document.Pages.Add();
             // Add text to new page
-            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment($"temperatuur: {temp}\temperatuur: {vocht}\bodemgezondheid: {bodemgezondheid}\bzonlicht: {zonlicht} \bfosfor: {bodemvoedingfos} \bkalium: {bodemvoedingkal} \bstikstof: {bodemvoedingsti} "));
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment($"temperatuur: {temp}\n vochtigheid: {vocht}\nbodemgezondheid: {bodemgezondheid}\nzonlicht: {zonlicht} \nfosfor: {bodemvoedingfos} \nkalium: {bodemvoedingkal} \nstikstof: {bodemvoedingsti} "));
             // Save updated PDF
             document.Save(dataDir + "offertekas.pdf");
         }
