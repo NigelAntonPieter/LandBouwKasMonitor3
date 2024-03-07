@@ -39,10 +39,9 @@ namespace LandBouwKas
         public void LoadGewasGegevens(Gewas gewas)
         {
             GegevensGewasListView.ItemsSource = new List<Gewas> { gewas };
-
         }
 
-        private void GegevensGewasListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedGewas = e.ClickedItem as Gewas;
             var temp = selectedGewas.temperatuur.waarde;

@@ -9,38 +9,41 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="Blue"
-          BorderBrush="Black"
-          BorderThickness="1"
-          Width="800"
-          Height="400"
-          CornerRadius="100">
-        <ListView x:Name="GewasListView"
-                  ItemClick="GewasListView_ItemClick"
-                  IsItemClickEnabled="True">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="apimodels:Gewas">
-                    <StackPanel 
-                        Background="Black" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"
-                        BorderThickness="1"
-                        CornerRadius="15"
-                        Width="400"
-                        Height="50"
-                        Padding="15"
-                        Margin="0,0,0,20">
-                        <TextBlock Text="{x:Bind gewasNaam}"
-                                   HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button 
-                    Content="geschidenis"
-                    
-                    Margin="5"
-                    Background="Blue" Click="Button_Click"/>
+    <Grid>
+        <Button Name="BackButton"
+                Click="BackButton_Click"
+                VerticalAlignment="Top"
+                Background="Blue">
+            Terug Knop
+        </Button>
+        <Grid Background="Blue"
+              BorderBrush="Black"
+              BorderThickness="1"
+              Width="800"
+              Height="400"
+              CornerRadius="100">
+            <ListView x:Name="GewasListView"
+                      ItemClick="GewasListView_ItemClick"
+                      IsItemClickEnabled="True"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="apimodels:Gewas">
+                        <StackPanel Background="Black"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    BorderThickness="1"
+                                    CornerRadius="15"
+                                    Width="400"
+                                    Height="50"
+                                    Padding="15"
+                                    Margin="0,0,0,20">
+                            <TextBlock Text="{x:Bind gewasNaam}"
+                                       HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
