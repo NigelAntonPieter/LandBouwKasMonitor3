@@ -14,7 +14,7 @@
                 Click="BackButton_Click"
                 VerticalAlignment="Top"
                 Background="Blue">
-            Terug Knop
+            Terug naar zone keuzemenu
         </Button>
         <Grid Background="Blue"
               BorderBrush="Black"

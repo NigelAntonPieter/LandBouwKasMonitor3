@@ -15,6 +15,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Aspose.Foundation;
 using Aspose.Pdf;
+using LandBouwKas.Model;
 
 
 
@@ -43,6 +44,16 @@ namespace LandBouwKas
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            var mainWindow = new MainWindow();
+            mainWindow.Activate();
+            this.Close();
+        }
+
+        
+
+        private void GegevensGewasListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
             var selectedGewas = e.ClickedItem as Gewas;
             var temp = selectedGewas.temperatuur.waarde;
             var vocht = selectedGewas.vochtigheid.waarde;
@@ -64,14 +75,5 @@ namespace LandBouwKas
             // Save updated PDF
             document.Save(dataDir + "offertekas.pdf");
         }
-
-        
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-       
     }
 }

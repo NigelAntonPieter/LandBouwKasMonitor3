@@ -135,6 +135,7 @@ namespace LandBouwKas
                             selectedZone.gewassen = gewassen;
                             GewasWindow gewasWindow = new GewasWindow(selectedZone);
                             gewasWindow.Activate();
+                            this.Close();
                         }
                         else
                         {

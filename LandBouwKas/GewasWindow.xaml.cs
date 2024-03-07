@@ -41,12 +41,22 @@ namespace LandBouwKas
 
             var gegevensGewasWindow = new GegevensGewasWindow(gewas);
             gegevensGewasWindow.Activate();
+            this.Close();
         }
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             GeschidenisWindow GeschidenisWindow = new GeschidenisWindow(selectedZone);
             GeschidenisWindow.Activate();
+            this.Close();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new MainWindow();
+            mainWindow.Activate();
+            this.Close();
+
         }
     }
 }
